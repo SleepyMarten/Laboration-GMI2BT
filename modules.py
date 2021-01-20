@@ -34,10 +34,9 @@ def press():
 
 
 def heltal():
+    import statistics
+    
     numbers = []
-    number_list = []
-    for num in range(0, 1001):
-        number_list.append(num)
     print("Welcome to the heltal function.")
     print("Input 2 numbers to run the function.")
     while (True):
@@ -46,11 +45,13 @@ def heltal():
         try:
             first = int(first_input)
             second = int(second_input)
-            for num in number_list:
+            for num in range(0,1001):
                 if(num/first).is_integer() & (num/second).is_integer():
                     numbers.append(num)
             print("\nThe inputed numbers were: %s and %s." % (first, second))
             print("ANSWER %s: " % (numbers))
+            average = statistics.mean(numbers)
+            print("The mean is %s" %str(round(average, 2)))
             press()
             break
         except ValueError:
