@@ -45,7 +45,7 @@ def heltal():
         try:
             first = int(first_input)
             second = int(second_input)
-            for num in range(0,1001):
+            for num in range(0, 1001):
                 if(num/first).is_integer() & (num/second).is_integer():
                     numbers.append(num)
             print("\nThe inputed numbers were: %s and %s." % (first, second))
@@ -60,7 +60,7 @@ def heltal():
 
 def guess_function():
     import random
-    rnd = random.randint(1, 100)
+    rnd = random.randint(1, 101)
     x = int(rnd)
     print("\nHINT (do not look): %s\n" % (x))
     print("Welcome to the guess the number funtion.")
