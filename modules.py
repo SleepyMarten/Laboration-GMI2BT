@@ -51,7 +51,7 @@ def heltal():
             print("\nThe inputed numbers were: %s and %s." % (first, second))
             print("ANSWER %s: " % (numbers))
             average = statistics.mean(numbers)
-            print("The mean is %s" %str(round(average, 2)))
+            print("The mean is %s" %(average))
             press()
             break
         except ValueError:
