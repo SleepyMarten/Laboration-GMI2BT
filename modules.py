@@ -1,79 +1,28 @@
-def menu():
-    print("\n---------------------MENU---------------------")
-    print("Choose a function to use\n")
-    print("(1) Heltal function.")
-    print("(2) Guess the number function.")
-    print("(3) Exit.")
-    print("----------------------------------------------\n")
-
-
-def choose_function():
-    start = True
-    while(start):
-        menu()
-        user_input = input("Input: ")
-        try:
-            inputed = int(user_input)
-            if inputed == 1:
-                heltal()
-            elif inputed == 2:
-                guess_function()
-            elif inputed == 3:
-                print("The program is shuting down.....")
-                press()
-                start = False
-            else:
-                print("Try again menu try")
-        except ValueError:
-            print("Input a number (1) (2) or (3)")
-            press() 
-
-
-def press():
-    input("\nPress any key to continue\n")
-
-
-def heltal():
-    import statistics
-    
+#Input 2 numbers and it will find number from 0-1000 that is divideable Integers.
+def heltal(input1, input2):
     numbers = []
-    print("Welcome to the heltal function.")
-    print("Input 2 numbers to run the function.")
-    while (True):
-        first_input = input("\nInput 1st number: ")
-        second_input = input("Input 2nd number: ")
-        try:
-            first = int(first_input)
-            second = int(second_input)
-            for num in range(0, 1001):
-                if(num/first).is_integer() & (num/second).is_integer():
-                    numbers.append(num)
-            print("\nThe inputed numbers were: %s and %s." % (first, second))
-            print("ANSWER %s: " % (numbers))
-            average = statistics.mean(numbers)
-            print("The mean is %s" %(average))
-            press()
-            break
-        except ValueError:
-            print("Try again.")
+    for num in range(0, 1001):
+        if(num/input1).is_integer() & (num/input2).is_integer():
+            numbers.append(num)
+    return numbers
 
-
+#randomizing a number from 1 to 100 for the user to guess.
 def guess_function():
+    #from random import randint
     import random
     rnd = random.randint(1, 101)
-    x = int(rnd)
-    print("\nHINT (do not look): %s\n" % (x))
+    print("\nHINT (do not look): %s\n" % (rnd))
     print("Welcome to the guess the number funtion.")
     print("You will have to guess a number bewteen number 1 and 100.\n")
     while (True):
         user_input = input('Input the number you think is right: ')
         try:
             user_answer = int(user_input)
-            if user_answer == x:
+            if user_answer == rnd:
                 print("\nCongratulation! You guessed right!\n")
-                press()
+                input("Press any key to continue.")
                 break
-            elif user_answer < x:
+            elif user_answer < rnd:
                 print("WRONG! You guessed to LOW, try to guess HIGHER.\n")
             else:
                 print("WRONG! You guessed to HIGH, try to guess LOWER.\n")

@@ -1,22 +1,36 @@
-import modules
+#LAB_1
 
-# Calling the functions
-start = True
-while(start):
-    modules.menu()
-    user_input = input("Input: ")
-    try:
-        inputed = int(user_input)
-        if inputed == 1:
-            modules.heltal()
-        elif inputed == 2:
-            modules.guess_function()
-        elif inputed == 3:
-            print("The program is shuting down.....")
-            modules.press()
-            start = False
-        else:
-            print("Try again menu try")
-    except ValueError:
-        print("Input a number (1) (2) or (3)")
-        modules.press()
+from modules import guess_function, heltal
+
+while True:
+    #Print menu
+    print("\n---------------------MENU---------------------")
+    print("Choose a function to use\n")
+    print("(1) Heltal function.")
+    print("(2) Guess the number function.")
+    print("(3) Exit.")
+    print("----------------------------------------------\n")
+
+    inputed = input("Choose a function: ")
+    if inputed == '1': #starting the first function ( heltal )
+        print("Welcome to the heltal function.")
+        print("You need to input (2) numbers to continue.")
+        while True:
+            try:
+                input1 = int(input("Input 1st number: "))
+                input2 = int(input("Input 2nd number: "))
+                print("You have inputed: %s and %s" %(input1, input2))
+                print("output: ")
+                print(heltal(input1, input2)) #output of which integers are divideable
+                input("Press any key to continue.")
+                break
+            except ValueError:
+                print("Try again.")
+    elif inputed == '2':
+        guess_function()
+    elif inputed == '3': #Exiting the program
+        print("Shuting down program.")
+        input("Press any key to continue.")
+        break
+    else:
+        print("Try again.")
