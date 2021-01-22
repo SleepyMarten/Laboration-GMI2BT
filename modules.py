@@ -6,11 +6,11 @@ def heltal(input1, input2):
     for num in range(1, 1001):
         if(num/input1).is_integer() & (num/input2).is_integer():
             numbers.append(num)
-    return numbers
+    return numbers #Returning a list of divideable integers.
 
 #randomizing a number from 1 to 100 for the user to guess.
 def guess_function():
-    rnd = randint(1, 101)
+    rnd = randint(1, 101) #randomizing number to guess.
     print("\nHINT (do not look): %s\n" % (rnd)) #using this to confirm what number the rnd has randomized.
     print("Welcome to the guess the number funtion.")
     print("You will have to guess a number bewteen number 1 and 100.\n")
