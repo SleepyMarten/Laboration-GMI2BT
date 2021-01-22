@@ -1,6 +1,6 @@
 #LAB_1
 
-from modules import guess_function, heltal
+from modules import guess_function, heltal #imported from modules.py
 
 while True:
     #Print menu
@@ -17,9 +17,10 @@ while True:
         print("You need to input (2) numbers to continue.")
         while True:
             try:
-                input1 = int(input("Input 1st number: "))
+                input1 = int(input("Input 1st number: ")) #user input of the 1st number
+                input1 = int(input("Input 1st number: ")) #user input of the 2nd number
                 input2 = int(input("Input 2nd number: "))
-                print("You have inputed: %s and %s" %(input1, input2))
+                print("You have inputed: %s and %s" %(input1, input2)) #showing what number the user inputed.
                 print("output: ")
                 print(heltal(input1, input2)) #output of which integers are divideable
                 input("Press any key to continue.")
