@@ -18,8 +18,7 @@ while True:
         while True:
             try:
                 input1 = int(input("Input 1st number: ")) #user input of the 1st number
-                input1 = int(input("Input 1st number: ")) #user input of the 2nd number
-                input2 = int(input("Input 2nd number: "))
+                input2 = int(input("Input 2nd number: ")) #user input of the 2nd number
                 print("You have inputed: %s and %s" %(input1, input2)) #showing what number the user inputed.
                 print("output: ")
                 print(heltal(input1, input2)) #output of which integers are divideable
