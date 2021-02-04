@@ -1,7 +1,7 @@
 import json, requests
 
 
-def find_movieee():
+def find_movie():
     url = "http://www.omdbapi.com/?apikey=e07c004&s="
     data = []
     history_data = []
