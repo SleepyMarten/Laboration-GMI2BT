@@ -1,12 +1,14 @@
 import json
-from modules import find_movie
+from modules import find_movie, show_history, show_store_movie
+url = "http://www.omdbapi.com/?apikey=e07c004&s="
 
 while True:
-    #Print out the menu
+    #Print out choises
     print("\n---------------------MENU---------------------")
     print("Choose a function\n")
     print("(1) Search for a movie.")
     print("(2) Show search history.")
+    print("(3) Show information of movies you have selected.")
     print("(q) Exit program.")
     print("----------------------------------------------\n")
     
@@ -15,14 +17,16 @@ while True:
         #Call find_movie.
         find_movie()
     elif inputed == '2':
-        print("Showing Search history.")
+        print("Showing a list of [5] latest searches: ")
         #Call for the latest search.
-        input("Press ENTER to continue.")
+        show_history()
+    elif inputed == '3':
+        print("Showing a list of selected movies: ")
+        show_store_movie()
     elif inputed == 'q':
-        print("You have chosen to exit the program.")
-        input("Press ENTER to continue")
-        print("Shuting down program.......")
+        print("Du har valt att avsluta programmet.")
+        input("Tryck ENTER för att avsluta programmet.")
+        print("Programmet avslutas.......")
         break
     else:
-        print("Choose a option from the menu!")
-        input("Press ENTER to continue")
+        print("Välj från de valet som finns i menyn!")
