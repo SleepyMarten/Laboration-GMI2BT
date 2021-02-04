@@ -18,4 +18,8 @@ def find_movie(url):
     print("Please select a movie, you can select a movie by its [number].")
     for i in data:
         for f in i['Search']:
-            f['imdbID']
+            if f['imdbID'] == "tt0112462":
+                plot_request = requests.get("http://www.omdbapi.com/?apikey=e07c004&plot=full&i="+"tt0112462")
+                plot_data.append(plot_request.json())
+                for i in plot_data:
+                    print(i['Plot'])
