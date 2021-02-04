@@ -1,6 +1,5 @@
 import json
 from modules import find_movie
-url = "http://www.omdbapi.com/?apikey=e07c004&s="
 
 while True:
     #Print out the menu
@@ -14,13 +13,16 @@ while True:
     inputed = input("Choose a function: ")
     if inputed == '1':
         #Call find_movie.
-        find_movie(url)
+        find_movie()
     elif inputed == '2':
-        print("Du har valt att se dem sensate sökningarna.")
+        print("Showing Search history.")
         #Call for the latest search.
+        input("Press ENTER to continue.")
     elif inputed == 'q':
-        print("Du har valt att avsluta programmet.")
-        input("Tryck ENTER för att avsluta programmet.")
-        print("Programmet avslutas.......")
+        print("You have chosen to exit the program.")
+        input("Press ENTER to continue")
+        print("Shuting down program.......")
+        break
     else:
-        print("Välj från de valet som finns i menyn!")
+        print("Choose a option from the menu!")
+        input("Press ENTER to continue")
